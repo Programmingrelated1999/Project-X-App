@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactCardFlip from 'react-card-flip'; // Assuming you're using a library like react-card-flip
 import axios from 'axios';
+import "./Flashcard.css";
 
 function Flashcard() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -30,29 +31,33 @@ function Flashcard() {
   };
 
   return (
-    <div>
+    <>
       {isLoading ? ( // Conditional rendering for loading state
         <div>Loading flashcards...</div>
       ) : (
-        <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-          <div>
-            {console.log("/./src/" + flashcard.question)}
-            <img
-              onClick={handleClick}
-              src="../resources/flashcards/ans12que2.PNG"
-            />
-          </div>
-          <div>
-            <img
-              onClick={handleClick}
-              src="../resources/flashcards/ans12que2.PNG"
-              width={300}
-              height={300}
-            />
-          </div>
-        </ReactCardFlip>
+        <div>
+          <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
+            <div className='flashcard-container'>
+              <h3>Question</h3>
+              <img
+                onClick={handleClick}
+                src={require('../resources/flashcards/ans12.PNG')}
+                className = "flashcard-image"
+              />
+            </div>
+            <div className='flashcard-container'>
+              <h3>Answer</h3>
+              <img
+                onClick={handleClick}
+                src={require('../resources/flashcards/ans12que2.PNG')}
+                className = "flashcard-image"
+              />
+            </div>
+          </ReactCardFlip>
+          {isFlipped? <button>Next</button>:null}
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
