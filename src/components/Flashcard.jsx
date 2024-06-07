@@ -8,6 +8,7 @@ function Flashcard() {
   const [isLoading, setIsLoading] = useState(true);
   const [flashcards, setFlashcards] = useState([]);
   const [flashcard, setFlashcard] = useState({}); // State for the current displayed flashcard
+  const [difficulty, setDifficulty] = useState('');
 
   useEffect(() => {
     setIsLoading(true); // Set loading to true initially
@@ -30,6 +31,10 @@ function Flashcard() {
     setIsFlipped(!isFlipped);
   };
 
+  if(flashcards){
+    console.log(flashcards)
+  }
+
   return (
     <>
       {isLoading ? ( // Conditional rendering for loading state
@@ -41,7 +46,7 @@ function Flashcard() {
               <h3>Question</h3>
               <img
                 onClick={handleClick}
-                src={require('../resources/flashcards/ans12.PNG')}
+                src={require('../' + flashcard.question)}                
                 className = "flashcard-image"
               />
             </div>
@@ -49,12 +54,16 @@ function Flashcard() {
               <h3>Answer</h3>
               <img
                 onClick={handleClick}
-                src={require('../resources/flashcards/ans12que2.PNG')}
+                src={require('../' + flashcard.answer)}
                 className = "flashcard-image"
               />
             </div>
           </ReactCardFlip>
           {isFlipped? <button>Next</button>:null}
+
+          {isFlipped? <button>Easy</button>:null}
+          {isFlipped? <button>Medium</button>:null}
+          {isFlipped? <button>Hard</button>:null}
         </div>
       )}
     </>
