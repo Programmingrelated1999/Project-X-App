@@ -14,7 +14,7 @@ function Flashcard() {
   useEffect(() => {
     setIsLoading(true); // Set loading to true initially
 
-    axios.get('http://34.228.170.154/flashcards/')
+    axios.get('https://project-x-api.onrender.com/flashcards/')
       .then((response) => {
         setFlashcards(response.data);
         // Set a random flashcard as the initial displayed one
@@ -37,7 +37,7 @@ function Flashcard() {
     
 // <----------------------------------------------------->
     
-    axios.get('http://34.228.170.154/flashcards/')
+    axios.get('https://project-x-api.onrender.com/flashcards/')
       .then((response) => {
         setFlashcards(response.data);
         // Set a random flashcard as the initial displayed one
@@ -58,7 +58,7 @@ function Flashcard() {
 
 // <----------------------------------------------------->
     
-  axios.get('http://34.228.170.154/flashcards/')
+  axios.get('https://project-x-api.onrender.com/flashcards/')
   .then((response) => {
     setFlashcards(response.data);
    // Set a random flashcard as the initial displayed one
@@ -79,7 +79,7 @@ function Flashcard() {
 
     // <----------------------------------------------------->
     
-  axios.get('http://34.228.170.154/flashcards/')
+  axios.get('https://project-x-api.onrender.com/flashcards/')
   .then((response) => {
     setFlashcards(response.data);
    // Set a random flashcard as the initial displayed one
