@@ -10,9 +10,6 @@ function Flashcard() {
   const [isLoading, setIsLoading] = useState(true);
   const [flashcards, setFlashcards] = useState([]);
   const [flashcard, setFlashcard] = useState({}); // State for the current displayed flashcard
-  const [difficulty, setDifficulty] = useState('');
-  const [difficultyArr, setDifficultyArr] = React.useState([]);
-
 
   useEffect(() => {
     setIsLoading(true); // Set loading to true initially
@@ -118,6 +115,7 @@ function Flashcard() {
                 onClick={handleClick}
                 src={require('../' + flashcard.question)}                
                 className = "flashcard-image"
+                alt = "question"
               />
             </div>
             <div className='flashcard-container'>
@@ -126,6 +124,7 @@ function Flashcard() {
                 onClick={handleClick}
                 src={require('../' + flashcard.answer)}
                 className = "flashcard-image"
+                alt = "answer"
               />
             </div>
           </ReactCardFlip>
