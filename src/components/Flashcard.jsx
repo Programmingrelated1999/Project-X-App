@@ -10,6 +10,7 @@ function Flashcard() {
   const [isLoading, setIsLoading] = useState(true);
   const [flashcards, setFlashcards] = useState([]);
   const [flashcard, setFlashcard] = useState({}); // State for the current displayed flashcard
+  const [difficulty, setDifficulty] = useState(''); // State for the current difficulty level
 
   useEffect(() => {
     setIsLoading(true); // Set loading to true initially
